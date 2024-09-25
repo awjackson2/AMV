@@ -33,7 +33,7 @@ overlay_rings() {
     local ring_image=$2  # Use the passed ring image
 
     # Get modified coordinates for the current electrode label from the CSV
-    coords=$(awk -F, -v label="$electrode_label" '$1 == label {print $3, $5}' "/amv/electrodes.csv")
+    coords=$(awk -F, -v label="$electrode_label" '$1 == label {print $3, $5}' "/ti-csc/assets/amv/electrodes.csv")
     if [ -z "$coords" ]; then
         echo "Warning: Coordinates not found for electrode '$electrode_label'. Skipping overlay."
         return
@@ -43,7 +43,7 @@ overlay_rings() {
     IFS=' ' read -r x_adjusted y_adjusted <<< "$coords"
 
     # Use ImageMagick to overlay the ring image onto the output image at the specified coordinates
-    convert "$output_image" "/amv/$ring_image" -geometry +${x_adjusted}+${y_adjusted} -composite "$output_image" || {
+    convert "$output_image" "/ti-csc/assets/amv/$ring_image" -geometry +${x_adjusted}+${y_adjusted} -composite "$output_image" || {
         echo "Error: Failed to overlay ring image '$ring_image' onto output image '$output_image'."
     }
 }
@@ -61,7 +61,7 @@ for montage in "${selected_montages[@]}"; do
     output_image=$(generate_output_filename "$montage")
 
     # Initialize output image to the template image (create only once for the montage)
-    cp "/amv/256template.png" "$output_image" || {
+    cp "/ti-csc/assets/amv/256template.png" "$output_image" || {
         echo "Error: Failed to copy template image to '$output_image'."
         continue
     }
