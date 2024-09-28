@@ -66,8 +66,8 @@ overlay_rings() {
     # Read coordinates into variables
     IFS=' ' read -r x_adjusted y_adjusted <<< "$coords"
 
-    # Use ImageMagick to overlay the ring image onto the output image at the specified coordinates
-    convert "$output_image" "$ring_image" -geometry +${x_adjusted}+${y_adjusted} -composite "$output_image"
+    # Use ImageMagick (magick) to overlay the ring image onto the output image at the specified coordinates
+    magick "$output_image" "$ring_image" -geometry +${x_adjusted}+${y_adjusted} -composite "$output_image"
 
     return 0  # Return success if coordinates are found and overlay is done
 }
@@ -115,3 +115,4 @@ while true; do
         break  # Exit the loop once the process is successful
     fi
 done
+

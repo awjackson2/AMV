@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Define paths
@@ -42,8 +43,8 @@ overlay_rings() {
     # Read coordinates into variables
     IFS=' ' read -r x_adjusted y_adjusted <<< "$coords"
 
-    # Use ImageMagick to overlay the ring image onto the output image at the specified coordinates
-    convert "$output_image" "/ti-csc/assets/amv/$ring_image" -geometry +${x_adjusted}+${y_adjusted} -composite "$output_image" || {
+    # Use ImageMagick (magick) to overlay the ring image onto the output image at the specified coordinates
+    magick "$output_image" "/ti-csc/assets/amv/$ring_image" -geometry +${x_adjusted}+${y_adjusted} -composite "$output_image" || {
         echo "Error: Failed to overlay ring image '$ring_image' onto output image '$output_image'."
     }
 }
@@ -94,3 +95,4 @@ for montage in "${selected_montages[@]}"; do
 
     echo "Ring overlays for montage '$montage' completed. Output saved to $output_image."
 done
+
