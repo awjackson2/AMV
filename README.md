@@ -2,7 +2,7 @@ Developed by: Aksel W. Jackson
 Maintained by:
 Last update: Sep 27, 2024
 
-# Sakubunn
+# Automatic Montage Visualizer
 
 ## Electrode Visualization Tool for Neural Montages
 
@@ -37,7 +37,7 @@ Follow the prompts to input electrode pairs. The script will generate a visualiz
 - `ring photos/`: Directory containing overlay images for electrode visualization
 - `256template.png`: Head template image
 
-### Author
+
 
 Created by Alex Jackson for electrode placement visualization in neurostimulation applications.
 
