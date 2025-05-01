@@ -4,6 +4,10 @@ Last update: Sep 27, 2024
 
 # Automatic Montage Visualizer
 
+![promptAMV](https://github.com/user-attachments/assets/4ec35418-0c99-4474-a987-b553f49cb2da)
+
+![highlighted__E056_E085___E170_E205_](https://github.com/user-attachments/assets/fa14f094-c71f-489a-8e5b-a8dc4083aa60)
+
 ## Electrode Visualization Tool for Neural Montages
 
 A simple visualization tool for displaying electrode placements on a head template. This tool allows you to input electrode pairs and generates a visual representation showing their positions on a standard head model.
@@ -38,10 +42,4 @@ Follow the prompts to input electrode pairs. The script will generate a visualiz
 - `256template.png`: Head template image
 
 
-
-Created by Alex Jackson for electrode placement visualization in neurostimulation applications.
-
-![promptAMV](https://github.com/user-attachments/assets/4ec35418-0c99-4474-a987-b553f49cb2da)
-
-![highlighted__E056_E085___E170_E205_](https://github.com/user-attachments/assets/fa14f094-c71f-489a-8e5b-a8dc4083aa60)
 
